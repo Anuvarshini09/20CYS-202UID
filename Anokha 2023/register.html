@@ -1,3 +1,4 @@
+<!Doctype html>
 <html>
     <head>
         <title>Anokha registration page</title>
@@ -99,38 +100,13 @@
         </div>
       </header>
     
-   <body>
-    <script>  
-        function validateform(){  
-        var name=document.myform.name.value;  
-        var password=document.myform.password.value;  
-          
-        if (name==null || name==""){  
-          alert("Name can't be blank");  
-          return false;  
-        }else if(Password.length<6){  
-          alert("Password must be at least 6 characters long.");  
-          return false;  
-          } 
-          else if(Password==null || Password=="")
-          {
-            alert("password can't be blank");  
-            return false; 
-          } 
-        }  
-        </script>
-
-   
-    
-        
-        
-        <fieldset>
-        <form onsubmit="return validateform()" >
-           <label style="color: #FFF5EE;"> Firstname: </label>         
-           <input type="text" name="firstname" size="15" required> <br> <br>  
-           <label style="color: #FFF5EE;"> Lastname: </label>         
-           <input type="text" name="lastname" size="15"required> <br> <br>
-           <label style="color: #FFF5EE;">   
+   <body>     
+    <label for="name"></label><br>
+    <input type="name" id="name" name="name" onchange="NameCheck()" placeholder="Name"><br>
+    <label for="phonenumber"> </label><br>
+    <input type="phonenumber" id="phonenumber" name="phonenumber" onchange="PhoneNumberCheck()" placeholder="Phone number"><br>
+    <label for="email">Email </label><br>
+    <input type="email" id="email" name="email" onchange="ValidateEmail()" placeholder="Email"><br>
             Course :  
             </label>   
             <select>  
@@ -147,37 +123,31 @@
             <label style="color: #FFF5EE;">   
             Gender :  
             <br>  
-            <input type="radio" name="male"/ style="color: #FFF5EE;"></style>Male <br>  
-            <input type="radio" name="female"/> Female <br>  
-            <input type="radio" name="other"/> Other  
-            <br>  
+            <div class="input_field radio_option">
+            	<input type="radio" name="radiogroup1" id="rd1">
+                <label for="rd1">Male</label>
+                <input type="radio" name="radiogroup1" id="rd2">
+                <label for="rd2">Female</label>
+                </div>
             <br>  
             <label style="color: #FFF5EE;">   
-                Phone :  
-                </label>  
-                <input type="text" name="country code"  value="+91" size="2"/>   
-                <input type="text" name="phone" size="10"/> <br> <br>  
-            <label style="color: #FFF5EE;">
+                
                 If you have any prior experience in tech fest , mention below: 
                <br>  
               <textarea cols="80" rows="5" value="address">  
               </textarea>  
-              <br> <br>  
-            <label style="color: #FFF5EE;">
-            Email:  
-            <input type="email" id="email" name="email"/> <br>    
-            <br> <br> 
+              <br> <br>  <br> 
             <label style="color: #FFF5EE;" for="dateofreg">Date of register:</label>
            <input type="date" id="dateofreg" name="dateofreg">
            <input type="submit" value="Submit"><br><br><br>
            <label style="color: #FFF5EE;">
            Are you a student of Amrita?
            <br>
-           <input type="radio" id="yes" name="yes" value="yes">
-           <label style="color: #FFF5EE;" for="Yes">YES</label>
-           <input type="radio" id="no" name="no" value="no">
-           <label style="color: #FFF5EE;" for="No">NO</label><br><br>
-        </label>
+           <input type="radio" name="radiogroup1" id="rd1">
+                <label for="rd1">Yes</label>
+                <input type="radio" name="radiogroup1" id="rd2">
+                <label for="rd2">No</label>
+                <br>
 
            For Verification , Do you have any of these:
            <br>
@@ -204,5 +174,39 @@
            
 
         </form>
+        <script>
+          function ValidateEmail() {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var x = document.getElementById("email").value;
+            if (!x.match(mailformat)) {
+                alert("You have entered an invalid email address.Please enter a valid email address.");
+                document.getElementById("email").focus()
+            }
+          }
+          
+          function PhoneNumberCheck() {
+          
+          var x = document.getElementById("phonenumber").value;
+          console.log(x)
+          if (!(x.length == 10)) {
+            alert("You have entered an invalid phone number. Please enter a valid phone number.")
+            document.getElementById("phonenumber").focus()
+          }
+          }
+          
+          function NameCheck() {
+              var x = document.getElementById("name").value;
+              var y = x.split("")
+              let sp = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'];
+              var arrLen = sp.length;
+              for (var i = 0; i < arrLen; i++) {
+                  if (y.includes(sp[i])) {
+                      alert("You have entered an invalid name.Special characters are present in the name.Enter a Valid Name")
+                      document.getElementById("name").focus()
+                      break
+                  }
+               }
+          }
+          </script>
     </body>
 </html>
