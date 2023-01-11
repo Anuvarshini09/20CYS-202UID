@@ -1,0 +1,230 @@
+<html>
+<head>
+    <title>about</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+@import url(https://fonts.googleapis.com/css?family=Montserrat:500);
+body {
+	margin: 0;
+	background:#FFF5EE;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 800;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+  background:#008080;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo{ 
+float: left;
+display: block; 
+margin-left: auto; 
+width:250px;
+height: 50px;
+height: auto; 
+}
+
+nav {
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+
+  position: relative;
+}
+
+nav a {
+  color: #FFF5EE;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #FFF5EE;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+:root {
+	/* Base font size */
+	font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	background-color: #fafafa;
+}
+
+.container {
+	max-width: 100rem;
+	margin: 0 auto;
+	padding: 0 2rem 2rem;
+}
+
+.heading {
+	font-family: "Montserrat", Arial, sans-serif;
+	font-size: 4rem;
+	font-weight: 500;
+	line-height: 1.5;
+	text-align: center;
+	padding: 3.5rem 0;
+	color: #1a1a1a;
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: black;
+  color: white;
+}
+
+.heading span {
+	display: block;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	
+	margin: -1rem -1rem;
+}
+
+.gallery-item {
+	
+	flex: 1 0 24rem;
+	
+	margin: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+}
+
+.gallery-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 400ms ease-out;
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+
+@supports (display: grid) {
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+		grid-gap: 2rem;
+	}
+
+	.gallery,
+	.gallery-item {
+		margin: 0;
+	}
+}
+
+
+</style>
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <header>
+        <div class="container">
+          <h3 class="logo">
+            <img src = "https://www.amrita.edu.in/images/logo.png" width="100px" height = "40px">
+          </h3>
+          <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./register.html">Register</a></li>
+                <li><a href="./about.html">about</a></li>
+                <li><a href="./events.html">Events</a></li>
+                <li><a href = "./gallery.html">Gallery</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <body style = "background-color:black;">
+        <div class="container">
+
+            <h1 style = "color: white;" class="heading">Anokha Image <span>Gallery</span></h1>
+            <hr>
+        
+            <div class="gallery">
+        
+                <div class="gallery-item">
+                    <img class="gallery-image" src="http://amrita.edu/wp-content/uploads/2019/02/anokha-2019-techfest30.jpg">
+                </div>
+        
+                <div class="gallery-item">
+                    <img class="gallery-image" src="http://amrita.edu/wp-content/uploads/2018/02/anokha20185.jpg">
+                </div>
+        
+                <div class="gallery-item">
+                    <img class="gallery-image" src="http://amrita.edu/wp-content/uploads/2019/02/anokha-2019-techfest10.jpg" >
+                </div>
+        
+                <div class="gallery-item">
+                    <img class="gallery-image" src="https://i.ytimg.com/vi/F6wAlwklTCQ/maxresdefault.jpg" >
+                </div>
+        
+                <div class="gallery-item">
+                    <img class="gallery-image" src="http://amrita.edu/wp-content/uploads/2019/02/anokha-2019-techfest14.jpg">
+                </div>
+        
+                <div class="gallery-item">
+                    <img class="gallery-image" src="http://amrita.edu/wp-content/uploads/2018/02/anokha20181.jpg">
+                </div>
+        
+            </div>
+        
+        </div>
+        <footer>
+            <p>Copyright For UI Anokha page</p>
+            <p>Designed by Anuvarshini M K - CB.EN.U4CYS21008 of II Year Btech CYS</p>
+            <P>Amrita Vishwa Vidyapeetham - Coimbatore </P>
+          </footer>
+      </body>
